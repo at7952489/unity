@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flappy Bird Preview</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: "Trebuchet MS", system-ui, sans-serif;
+      }
+      body {
+        margin: 0;
+        background: linear-gradient(#6ec6ff, #c8f0ff);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .frame {
+        width: 800px;
+        height: 450px;
+        border-radius: 24px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+        background: linear-gradient(#7ad7ff 0%, #d7f5ff 55%, #94e27f 55%);
+      }
+      .ground {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 70px;
+        background: linear-gradient(90deg, #6ab04c, #78c850, #6ab04c);
+      }
+      .pipe {
+        position: absolute;
+        width: 80px;
+        background: linear-gradient(#5bc958, #2d8f3d);
+        border: 6px solid #1f6b2c;
+        border-radius: 18px;
+        box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.2);
+      }
+      .pipe.top {
+        height: 190px;
+        right: 160px;
+        top: -30px;
+      }
+      .pipe.bottom {
+        height: 200px;
+        right: 160px;
+        bottom: 70px;
+      }
+      .bird {
+        position: absolute;
+        left: 180px;
+        top: 150px;
+        width: 70px;
+        height: 50px;
+        background: #ffcc4d;
+        border-radius: 45% 55% 40% 60%;
+        border: 4px solid #d18b00;
+        transform: rotate(-12deg);
+      }
+      .bird::before {
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        background: #1f1f1f;
+        border-radius: 50%;
+        top: 16px;
+        right: 14px;
+      }
+      .bird::after {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 20px;
+        background: #ff8c42;
+        border-radius: 0 50% 50% 0;
+        top: 20px;
+        left: -10px;
+        clip-path: polygon(0 50%, 100% 0, 100% 100%);
+      }
+      .score {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 48px;
+        font-weight: 700;
+        color: white;
+        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+      }
+      .label {
+        position: absolute;
+        bottom: 90px;
+        left: 32px;
+        padding: 12px 16px;
+        background: rgba(255, 255, 255, 0.85);
+        border-radius: 12px;
+        font-weight: 600;
+        color: #1f4f5f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="frame">
+      <div class="score">12</div>
+      <div class="bird"></div>
+      <div class="pipe top"></div>
+      <div class="pipe bottom"></div>
+      <div class="ground"></div>
+      <div class="label">Unity Flappy Bird Preview</div>
+    </div>
+  </body>
+</html>
